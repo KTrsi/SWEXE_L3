@@ -1,0 +1,16 @@
+<% if flash[:notice] %>
+   <%= flash[:notice] %>
+<% end %>
+
+<% @tweet.each do |e| %>
+     <p>
+      <%= e.message %>
+      <% k = (Time.current-e.tdate)/60 %>
+      <%= k.round %>分前
+      <%= link_to '表示', "/tweets/#{e.id}" %>
+      <%= link_to '編集', "/tweets/#{e.id}/edit" %>
+      <%= link_to '削除', "/tweets/#{e.id}", method: :delete %>
+    </p>
+<% end %>
+
+

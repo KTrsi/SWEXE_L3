@@ -1,0 +1,10 @@
+<p>
+<%= @tweet.message %>    
+</p>
+
+<p>
+<% k = (Time.current-@tweet.tdate)/60 %>
+<%= k.round %>分前
+</p>
+
+<%= link_to '戻る', :back %>
